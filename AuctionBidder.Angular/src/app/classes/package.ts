@@ -17,6 +17,7 @@ export class Package {
         this.available =        ('available' in obj ? obj.available : false);
         this.sold =             ('sold' in obj ? obj.sold : false);
         this.goal =             ('goal' in obj ? obj.goal : -1);
+        this.imageUrl =         ('imageUrl' in obj ? obj.imageUrl : null);
         this.state =            'inactive';
     }
 
@@ -32,6 +33,7 @@ export class Package {
     packageType: PackageTypes;
     totalAvailable: number;
     available: boolean;
+    imageUrl: string;
     sold: boolean;
     state: string;
     timeAvailable: string;
@@ -51,6 +53,7 @@ export const TestPackages = [
         id: 100,
         name: 'Flying Solo',
         description: 'One hour private plane flight over the shore or over your house. Take an aerial shot of your home!',
+        imageUrl: 'https://disciplesofflight.com/wp-content/uploads/2015/09/Cessna_172_Skyhawk.jpg',
         bidIncrement: 250,
         currentBid: 500,
         currentWinner: null,

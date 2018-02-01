@@ -5,8 +5,7 @@
   <div class="row">
     <div *ngFor="let item of items" class="col-lg-4 col-md-6 col-sm-12 my-2">
       <div class="card">
-        <img class="card-img-top d-sm-none d-xs-none d-md-block w-75 mx-auto" style="height: auto" src="http://www.livingmagazine.fr/components/com_easyblog/themes/wireframe/images/placeholder-image.png"
-          alt="Card image cap">
+        <img class="card-img-top d-sm-none d-xs-none d-md-block w-75 mx-auto mt-3" style="height: auto" src="{{item.imageUrl || '../../../assets/placeholder-image.png'}}">
         <div class="card-body">
           <h5 class="card-title">
             #{{item.id}} {{item.name}}
