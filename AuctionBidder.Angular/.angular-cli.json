@@ -11,11 +11,15 @@
         "assets",
         "favicon.ico",
         {
-          "glob": "**/*.*",
-          "input": "../server/",
-          "output": "../"
+          "glob": "index.js",
+          "input": "./server/",
+          "output": "./"
         },
-        "manifest.json"
+        {
+          "glob": "package.json",
+          "input": "./server/",
+          "output": "./"
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
