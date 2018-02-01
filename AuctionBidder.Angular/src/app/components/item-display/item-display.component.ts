@@ -10,6 +10,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-item-display',
@@ -116,7 +117,7 @@ export class ItemDisplayComponent implements OnInit {
       this.bidConnetion.stop();
     }
 
-    this.bidConnetion = new HubConnection('http://localhost:5000/bid');
+    this.bidConnetion = new HubConnection(environment.signalR.bidConnection);
 
     this.bidConnetion
       .start()
