@@ -1,0 +1,12 @@
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/obj/Debug/netcoreapp2.0/AuctionBidder.SignalR.csproj.CoreCompileInputs.cache
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/obj/Debug/netcoreapp2.0/AuctionBidder.SignalR.AssemblyInfoInputs.cache
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/obj/Debug/netcoreapp2.0/AuctionBidder.SignalR.AssemblyInfo.cs
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/bin/Debug/netcoreapp2.0/AuctionBidder.SignalR.deps.json
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/bin/Debug/netcoreapp2.0/AuctionBidder.SignalR.runtimeconfig.json
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/bin/Debug/netcoreapp2.0/AuctionBidder.SignalR.runtimeconfig.dev.json
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/bin/Debug/netcoreapp2.0/AuctionBidder.SignalR.dll
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/bin/Debug/netcoreapp2.0/AuctionBidder.SignalR.pdb
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/bin/Debug/netcoreapp2.0/AuctionBidder.Models.dll
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/bin/Debug/netcoreapp2.0/AuctionBidder.Models.pdb
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/obj/Debug/netcoreapp2.0/AuctionBidder.SignalR.dll
+/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.SignalR/obj/Debug/netcoreapp2.0/AuctionBidder.SignalR.pdb

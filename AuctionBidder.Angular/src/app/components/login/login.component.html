@@ -1,0 +1,16 @@
+<div>
+  <form class="form-inline" (submit)="login(bidderNumber.value)">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="bidderNumber" class="sr-only">Password</label>
+      <input type="text" pKeyFilter="int" #bidderNumber>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Login</button>
+  </form>
+</div>
+<div>
+  <h5>Test Users</h5>
+  <button type="button" class="btn btn-primary m-2" (click)="selectBidder(user)" *ngFor="let user of bidders">
+    {{user.FirstName}} {{user.LastName}}
+    <br>Bidder Number: {{user.BidderNumber}}
+  </button>
+</div>

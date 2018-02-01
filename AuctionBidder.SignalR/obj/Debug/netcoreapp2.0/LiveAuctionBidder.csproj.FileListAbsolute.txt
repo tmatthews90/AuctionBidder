@@ -1,0 +1,12 @@
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/bin/Debug/netcoreapp2.0/LiveAuctionBidder.deps.json
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/bin/Debug/netcoreapp2.0/LiveAuctionBidder.runtimeconfig.json
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/bin/Debug/netcoreapp2.0/LiveAuctionBidder.runtimeconfig.dev.json
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/bin/Debug/netcoreapp2.0/LiveAuctionBidder.dll
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/bin/Debug/netcoreapp2.0/LiveAuctionBidder.pdb
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/bin/Debug/netcoreapp2.0/LiveAuctionBidder.Models.dll
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/bin/Debug/netcoreapp2.0/LiveAuctionBidder.Models.pdb
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/obj/Debug/netcoreapp2.0/LiveAuctionBidder.csproj.CoreCompileInputs.cache
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/obj/Debug/netcoreapp2.0/LiveAuctionBidder.AssemblyInfoInputs.cache
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/obj/Debug/netcoreapp2.0/LiveAuctionBidder.AssemblyInfo.cs
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/obj/Debug/netcoreapp2.0/LiveAuctionBidder.dll
+/Users/tmatthews/Documents/development/AuctionBidder/LiveAuctionBidder/obj/Debug/netcoreapp2.0/LiveAuctionBidder.pdb

@@ -1,0 +1,34 @@
+<p-table [value]="packages" [paginator]="true" [rows]="25" sortField="name" sortOrder="1">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th [pSortableColumn]="name">Name<p-sortIcon [field]="name"></p-sortIcon></th>
+      <th>Type</th>
+      <th>Minimum Bid</th>
+      <th>Bid Increment</th>
+      <th>Buy Now Price</th>
+      <th>Total Available</th>
+      <th>Current Winner</th>
+      <th>Time Available</th>
+      <th>Time End</th>
+      <th>Available</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-package>
+    <tr>
+      <td>{{package.id}}</td>
+      <td>{{package.name}}</td>
+      <td>{{package.packageType}}</td>
+      <td>{{package.minimumBid | currency:'CAD':'symbol-narrow'}}</td>
+      <td>{{package.bidIncrement | currency:'CAD':'symbol-narrow'}}</td>
+      <td>{{package.buyNowPrice | currency:'CAD':'symbol-narrow'}}</td>
+      <td>{{package.totalAvailable}}</td>
+      <td>{{package.currentWinner ? package.currentWinner.bidderNumber : 'No Bids'}}</td>
+      <td>{{package.timeAvailable}}</td>
+      <td>{{package.timeEnd}}</td>
+      <td>
+        <p-inputSwitch (onChange)="package.available = !package.available" [ngModel]="package.available" onLabel="Yes" offLabel="No"></p-inputSwitch>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
