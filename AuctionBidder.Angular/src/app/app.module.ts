@@ -19,7 +19,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PackagesComponent } from './components/packages/packages.component';
 import { ItemDisplayComponent } from './components/item-display/item-display.component';
 import { SilentAuctionComponent } from './components/silent-auction/silent-auction.component';
-import { SuperSilentAuctionComponent } from './components/super-silent-auction/super-silent-auction.component';
 import { MultiSellsComponent } from './components/multi-sells/multi-sells.component';
 
 /* Services */
@@ -38,7 +37,6 @@ import { appRoutes } from './app.routes';
     PackagesComponent,
     ItemDisplayComponent,
     SilentAuctionComponent,
-    SuperSilentAuctionComponent,
     MultiSellsComponent
   ],
   imports: [

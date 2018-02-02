@@ -46,7 +46,6 @@ export class Package {
 export enum PackageType {
     Live = 'Live',
     Silent = 'Silent',
-    SuperSilent = 'Super Silent',
     MultiSale = 'Multisale'
 }
 
@@ -147,7 +146,7 @@ export const TestPackages = [
         buyNowPrice: 200,
         available: true,
         currentWinner: null,
-        packageType: PackageType.SuperSilent
+        categoryID: 1005
     }),
     new Package({
         id: 500,

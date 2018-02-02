@@ -39,5 +39,10 @@ export const TestCategories = [
         id: 1004,
         name: 'Kids',
         description: null
+    }),
+    new Category({
+        id: 1005,
+        name: 'Super Silent',
+        description: null
     })
 ];
