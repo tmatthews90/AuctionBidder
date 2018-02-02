@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { LiveAuctionComponent } from './components/live-auction/live-auction.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PackagesComponent } from './components/packages/packages.component';
-import { LoginComponent } from './components/login/login.component';
 import { ItemDisplayComponent } from './components/item-display/item-display.component';
 import { SilentAuctionComponent } from './components/silent-auction/silent-auction.component';
 import { SuperSilentAuctionComponent } from './components/super-silent-auction/super-silent-auction.component';
@@ -37,7 +36,6 @@ import { appRoutes } from './app.routes';
     LiveAuctionComponent,
     NavbarComponent,
     PackagesComponent,
-    LoginComponent,
     ItemDisplayComponent,
     SilentAuctionComponent,
     SuperSilentAuctionComponent,
