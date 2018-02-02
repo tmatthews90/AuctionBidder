@@ -8,7 +8,7 @@ export class Category {
         this.description =      ('description' in obj ? obj.description : '');
         this.timeAvailable =    ('timeAvailable' in obj ? obj.timeAvailable : null);
         this.timeEnd =          ('timeEnd' in obj ? obj.timeEnd : null);
-        this.packageType =      ('packageType' in obj ? obj.packageType : null);
+        this.packageType =      ('packageType' in obj ? obj.packageType : PackageType.Silent);
     }
 
     id: number;

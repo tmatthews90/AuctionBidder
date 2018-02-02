@@ -114,6 +114,7 @@ export const TestPackages = [
         bidIncrement: 2,
         currentWinner: null,
         available: true,
+        categoryID: 1004,
         packageType: PackageType.Silent
     }),
     new Package({

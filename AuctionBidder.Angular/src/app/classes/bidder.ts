@@ -28,16 +28,16 @@ export const TestBidders = [
     new Bidder({
         FirstName: 'Travis',
         LastName: 'Matthews',
-        BidderNumber: 107,
+        BidderNumber: 100,
     }),
     new Bidder({
         FirstName: 'Michael',
         LastName: 'Cantrell',
-        BidderNumber: 201,
+        BidderNumber: 101,
     }),
     new Bidder({
         FirstName: 'David',
         LastName: 'Knight',
-        BidderNumber: 208,
+        BidderNumber: 102,
     })
 ];

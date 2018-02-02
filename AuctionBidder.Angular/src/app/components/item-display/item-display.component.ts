@@ -39,8 +39,8 @@ export class ItemDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.establishConnection();
-    this.categories = TestCategories;
     this.items = TestPackages.filter(p => p.packageType === this.itemType);
+    this.categories = TestCategories.filter(c => c.packageType === this.itemType && this.items.find(i => i.categoryID === c.id));
     this.userService._bidder.subscribe(bidder => {
       this.currentBidder = bidder;
       this.displayLogin = false;
@@ -53,7 +53,7 @@ export class ItemDisplayComponent implements OnInit {
         .invoke('placeBid', itemID, bidAmount, this.currentBidder)
         .catch(err => this.establishConnection());
     } else {
-      this.displayLogin = true;
+      this.userService.displayLogin = true;
     }
   }
 
@@ -63,7 +63,7 @@ export class ItemDisplayComponent implements OnInit {
         .invoke('purchaseItem', itemID, this.currentBidder)
         .catch(err => this.establishConnection());
     } else {
-      this.displayLogin = true;
+      this.userService.displayLogin = true;
     }
   }
 
@@ -73,7 +73,7 @@ export class ItemDisplayComponent implements OnInit {
         .invoke('buyNow', itemID, this.currentBidder)
         .catch(err => this.establishConnection());
     } else {
-      this.displayLogin = true;
+      this.userService.displayLogin = true;
     }
   }
 

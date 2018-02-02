@@ -8,7 +8,9 @@ export class UserService {
 
   // private _bidder: Bidder;
   private bidderSubject = new BehaviorSubject<Bidder>(null);
+  private displayLoginSubject = new BehaviorSubject<boolean>(false);
   public _bidder = this.bidderSubject.asObservable();
+  public _displayLogin = this.displayLoginSubject.asObservable();
 
   constructor() { }
 
@@ -18,6 +20,14 @@ export class UserService {
 
   get bidder() {
     return this.bidderSubject.value;
+  }
+
+  set displayLogin(flag) {
+    this.displayLoginSubject.next(flag);
+  }
+
+  get displayLogin() {
+    return this.displayLoginSubject.value;
   }
 
   public login(bidNumber: number) {
