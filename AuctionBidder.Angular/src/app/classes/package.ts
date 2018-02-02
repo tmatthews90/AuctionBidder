@@ -18,6 +18,7 @@ export class Package {
         this.sold =             ('sold' in obj ? obj.sold : false);
         this.goal =             ('goal' in obj ? obj.goal : -1);
         this.imageUrl =         ('imageUrl' in obj ? obj.imageUrl : null);
+        this.categoryID =       ('categoryID' in obj ? obj.categoryID : null);
         this.state =            'inactive';
     }
 
@@ -34,6 +35,7 @@ export class Package {
     totalAvailable: number;
     available: boolean;
     imageUrl: string;
+    categoryID: number;
     sold: boolean;
     state: string;
     timeAvailable: string;
@@ -74,8 +76,8 @@ export const TestPackages = [
     }),
     new Package({
         id: 300,
-        name: 'Item 3',
-        description: 'Live Auction item number 1. All inclusive trip to San Fransico.',
+        name: 'Wine and Dine',
+        description: 'Bottle of wine and two crystall glasses with movie night popcorn.',
         currentBid: 8,
         bidIncrement: 2,
         currentWinner: null,
@@ -83,9 +85,62 @@ export const TestPackages = [
         packageType: PackageTypes.Silent
     }),
     new Package({
+        id: 301,
+        name: 'Autographed Football',
+        description: 'Football signed by Dak Prescott.',
+        currentBid: 8,
+        bidIncrement: 2,
+        currentWinner: null,
+        available: true,
+        categoryID: 1002,
+        packageType: PackageTypes.Silent
+    }),
+    new Package({
+        id: 302,
+        name: 'Backyard BBQ',
+        description: 'Grill mats, grilling utensils, BBQ sauces and a grill apron.',
+        currentBid: 8,
+        bidIncrement: 2,
+        currentWinner: null,
+        categoryID: 1001,
+        available: true,
+        packageType: PackageTypes.Silent
+    }),
+    new Package({
+        id: 303,
+        name: 'Kids Painting',
+        description: 'Painting from 5th grade class.',
+        currentBid: 8,
+        bidIncrement: 2,
+        currentWinner: null,
+        available: true,
+        packageType: PackageTypes.Silent
+    }),
+    new Package({
+        id: 304,
+        name: 'Apple iPad',
+        description: 'Brand new iPad with smart case.',
+        currentBid: 8,
+        bidIncrement: 2,
+        currentWinner: null,
+        available: true,
+        packageType: PackageTypes.Silent
+    }),
+    new Package({
+        id: 305,
+        name: 'Dog Basket',
+        description: 'Assorted toys and dog treats for pet.',
+        currentBid: 8,
+        bidIncrement: 2,
+        currentWinner: null,
+        categoryID: 1001,
+        available: true,
+        packageType: PackageTypes.Silent
+    }),
+    new Package({
         id: 400,
-        name: 'Item 4',
-        description: 'Live Auction item number 1. All inclusive trip to San Fransico.',
+        name: 'Shhhhh. Super Silent Item here.',
+        description: 'So silent we can\'t event tell you what it is.',
         currentBid: 82,
         bidIncrement: 2,
         buyNowPrice: 200,

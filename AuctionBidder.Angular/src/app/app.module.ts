@@ -10,6 +10,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { DialogModule } from 'primeng/dialog';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { TabViewModule } from 'primeng/tabview';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -17,12 +18,16 @@ import { LiveAuctionComponent } from './components/live-auction/live-auction.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PackagesComponent } from './components/packages/packages.component';
 import { LoginComponent } from './components/login/login.component';
-import { UserService } from './services/user.service';
-import { BidderGuard } from './guards/bidder.guard';
 import { ItemDisplayComponent } from './components/item-display/item-display.component';
 import { SilentAuctionComponent } from './components/silent-auction/silent-auction.component';
 import { SuperSilentAuctionComponent } from './components/super-silent-auction/super-silent-auction.component';
 import { MultiSellsComponent } from './components/multi-sells/multi-sells.component';
+
+/* Services */
+import { UserService } from './services/user.service';
+
+/* Guards */
+import { BidderGuard } from './guards/bidder.guard';
 
 import { appRoutes } from './app.routes';
 
@@ -45,6 +50,7 @@ import { appRoutes } from './app.routes';
     ProgressBarModule,
     ReactiveFormsModule,
     TableModule,
+    TabViewModule,
     KeyFilterModule,
     InputSwitchModule,
     DialogModule,

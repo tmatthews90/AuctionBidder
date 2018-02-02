@@ -3,13 +3,8 @@ import { HubConnection } from '@aspnet/signalr-client';
 import { Bidder } from '../../classes/bidder';
 import { UserService } from '../../services/user.service';
 import { TestPackages, Package, PackageTypes } from '../../classes/package';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
+import { Category, TestCategories } from '../../classes/category';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -37,15 +32,15 @@ export class ItemDisplayComponent implements OnInit {
   currentBidder: Bidder;
   connection: Boolean;
   packageTypes = PackageTypes;
-
+  categories: Category[] = [];
   items: Package[] = [];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.establishConnection();
-    this.items = TestPackages;
-    this.items = this.items.filter(p => p.packageType === this.itemType);
+    this.categories = TestCategories;
+    this.items = TestPackages.filter(p => p.packageType === this.itemType);
     this.userService._bidder.subscribe(bidder => {
       this.currentBidder = bidder;
       this.displayLogin = false;
@@ -110,6 +105,14 @@ export class ItemDisplayComponent implements OnInit {
 
   getGoalPercentage(item) {
     return item.currentBid / item.goal * 100;
+  }
+
+  categoryChange(index) {
+    if (index !== 0) {
+      this.items = TestPackages.filter(item => item.categoryID === this.categories[index - 1].id && item.packageType === this.itemType);
+    } else {
+      this.items = TestPackages.filter(item => item.packageType === this.itemType);
+    }
   }
 
   establishConnection() {

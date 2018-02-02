@@ -3,6 +3,14 @@
     {{itemType}}
   </h1>
   <div class="row">
+    <p-tabView (onChange)="categoryChange($event.index)">
+      <p-tabPanel header="All Items" leftIcon="fa-calendar mr-2">
+      </p-tabPanel>
+      <p-tabPanel *ngFor="let category of categories" header="{{category.name}}">
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+  <div class="row">
     <div *ngFor="let item of items" class="col-lg-4 col-md-6 col-sm-12 my-2">
       <div class="card">
         <img class="card-img-top d-sm-none d-xs-none d-md-block w-75 mx-auto mt-3" style="height: auto" src="{{item.imageUrl || '../../../assets/placeholder-image.png'}}">
@@ -40,9 +48,10 @@
             </div>
           </div>
           <div class="mt-2" *ngIf="item.available && !item.sold">
-            <button *ngIf="currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false" type="button" class="btn btn-primary" disabled>Winning</button>
-            <button *ngIf="item.packageType !== packageTypes.MultiSale && !(currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false)" type="button" class="btn btn-primary" (click)="placeBid(item.id, item.currentBid + item.bidIncrement)"
-              [disabled]="!item.available || item.sold || (item.packageType === packageTypes.MultiSale && item.totalAvailable < 1)">Place Bid for {{item.currentBid + item.bidIncrement | currency:'CAD':'symbol-narrow'}}</button>
+            <button *ngIf="currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false" type="button" class="btn btn-primary"
+              disabled>Winning</button>
+            <button *ngIf="item.packageType !== packageTypes.MultiSale && !(currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false)"
+              type="button" class="btn btn-primary" (click)="placeBid(item.id, item.currentBid + item.bidIncrement)" [disabled]="!item.available || item.sold || (item.packageType === packageTypes.MultiSale && item.totalAvailable < 1)">Place Bid for {{item.currentBid + item.bidIncrement | currency:'CAD':'symbol-narrow'}}</button>
             <button *ngIf="item.buyNowPrice && item.packageType !== packageTypes.MultiSale" type="button" class="btn btn-success float-right"
               (click)="buyNow(item.id)" [disabled]="!item.available || item.sold || (item.packageType === packageTypes.MultiSale && item.totalAvailable < 1)">Buy Now {{item.buyNowPrice | currency:'CAD':'symbol-narrow'}}</button>
             <button *ngIf="item.buyNowPrice && item.packageType === packageTypes.MultiSale" type="button" class="btn btn-primary" [disabled]="item.totalAvailable < 1 || !item.available"
