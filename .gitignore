@@ -1,2 +1,6 @@
 
 \.DS_Store
+
+AuctionBidder\.SignalR/obj/
+
+AuctionBidder\.Models/obj/

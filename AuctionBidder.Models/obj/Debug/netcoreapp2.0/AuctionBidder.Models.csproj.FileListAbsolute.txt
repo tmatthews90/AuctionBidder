@@ -1,8 +1,0 @@
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/bin/Debug/netcoreapp2.0/AuctionBidder.Models.deps.json
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/bin/Debug/netcoreapp2.0/AuctionBidder.Models.dll
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/bin/Debug/netcoreapp2.0/AuctionBidder.Models.pdb
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/obj/Debug/netcoreapp2.0/AuctionBidder.Models.csproj.CoreCompileInputs.cache
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/obj/Debug/netcoreapp2.0/AuctionBidder.Models.AssemblyInfoInputs.cache
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/obj/Debug/netcoreapp2.0/AuctionBidder.Models.AssemblyInfo.cs
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/obj/Debug/netcoreapp2.0/AuctionBidder.Models.dll
-/Users/tmatthews/Documents/development/AuctionBidder/AuctionBidder.Models/obj/Debug/netcoreapp2.0/AuctionBidder.Models.pdb
