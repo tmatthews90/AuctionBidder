@@ -21,6 +21,11 @@ export class Category {
 
 export const TestCategories = [
     new Category({
+        id: -1,
+        name: 'All Items',
+        description: null
+    }),
+    new Category({
         id: 1001,
         name: 'Home',
         description: null

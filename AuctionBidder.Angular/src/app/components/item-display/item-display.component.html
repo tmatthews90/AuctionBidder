@@ -2,14 +2,9 @@
   <h1>
     {{itemType}}
   </h1>
-  <div class="row">
-    <p-tabView (onChange)="categoryChange($event.index)">
-      <p-tabPanel header="All Items" leftIcon="fa-calendar mr-2">
-      </p-tabPanel>
-      <p-tabPanel *ngFor="let category of categories" header="{{category.name}}">
-      </p-tabPanel>
-    </p-tabView>
-  </div>
+  <p-tabView *ngIf="categories" (onChange)="categoryChange($event.index)" [activeIndex]="0">
+    <p-tabPanel *ngFor="let category of categories" header="{{category.name}}"></p-tabPanel>
+  </p-tabView>
   <div class="row">
     <div *ngFor="let item of items" class="col-lg-4 col-md-6 col-sm-12 my-2">
       <div class="card">

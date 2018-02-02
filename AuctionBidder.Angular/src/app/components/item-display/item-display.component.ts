@@ -38,13 +38,13 @@ export class ItemDisplayComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.establishConnection();
     this.items = TestPackages.filter(p => p.packageType === this.itemType);
-    this.categories = TestCategories.filter(c => c.packageType === this.itemType && this.items.find(i => i.categoryID === c.id));
+    this.categories = TestCategories.filter(c => (c.packageType === this.itemType && this.items.find(i => i.categoryID === c.id) || c.id < 0));
     this.userService._bidder.subscribe(bidder => {
       this.currentBidder = bidder;
       this.displayLogin = false;
     });
+    this.establishConnection();
   }
 
   public placeBid(itemID, bidAmount): void {
@@ -108,8 +108,9 @@ export class ItemDisplayComponent implements OnInit {
   }
 
   categoryChange(index) {
-    if (index !== 0) {
-      this.items = TestPackages.filter(item => item.categoryID === this.categories[index - 1].id && item.packageType === this.itemType);
+    // if define category ID filter based off of ID. If category id < 0 then is all items category
+    if (this.categories[index].id > 0) {
+      this.items = TestPackages.filter(item => item.categoryID === this.categories[index].id && item.packageType === this.itemType);
     } else {
       this.items = TestPackages.filter(item => item.packageType === this.itemType);
     }
