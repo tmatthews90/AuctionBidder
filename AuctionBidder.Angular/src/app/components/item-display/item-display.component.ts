@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HubConnection } from '@aspnet/signalr-client';
 import { Bidder } from '../../classes/bidder';
 import { UserService } from '../../services/user.service';
-import { TestPackages, Package, PackageTypes } from '../../classes/package';
+import { TestPackages, Package, PackageType } from '../../classes/package';
 import { Category, TestCategories } from '../../classes/category';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { environment } from '../../../environments/environment';
@@ -31,7 +31,7 @@ export class ItemDisplayComponent implements OnInit {
   displayLogin = false;
   currentBidder: Bidder;
   connection: Boolean;
-  packageTypes = PackageTypes;
+  PackageType = PackageType;
   categories: Category[] = [];
   items: Package[] = [];
 

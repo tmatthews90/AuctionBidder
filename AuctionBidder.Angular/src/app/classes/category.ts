@@ -1,3 +1,5 @@
+import { PackageType } from './package';
+
 export class Category {
 
     constructor(obj?: any) {
@@ -6,11 +8,13 @@ export class Category {
         this.description =      ('description' in obj ? obj.description : '');
         this.timeAvailable =    ('timeAvailable' in obj ? obj.timeAvailable : null);
         this.timeEnd =          ('timeEnd' in obj ? obj.timeEnd : null);
+        this.packageType =      ('packageType' in obj ? obj.packageType : null);
     }
 
     id: number;
     name: string;
     description: string;
+    packageType: PackageType;
     timeAvailable: Date;
     timeEnd: Date;
 }

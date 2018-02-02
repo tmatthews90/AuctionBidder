@@ -12,7 +12,7 @@ export class Package {
         this.value =            ('value' in obj ? obj.value : '');
         this.minimumBid =       ('minimumBid' in obj ? obj.minimumBid : obj.bidIncrement || 1);
         this.buyNowPrice =      ('buyNowPrice' in obj ? obj.buyNowPrice : '');
-        this.packageType =      ('packageType' in obj ? obj.packageType : PackageTypes.Silent);
+        this.packageType =      ('packageType' in obj ? obj.packageType : PackageType.Silent);
         this.totalAvailable =   ('totalAvailable' in obj ? obj.totalAvailable : 1);
         this.available =        ('available' in obj ? obj.available : false);
         this.sold =             ('sold' in obj ? obj.sold : false);
@@ -31,7 +31,7 @@ export class Package {
     value: number;
     currentBid: number;
     currentWinner: Bidder;
-    packageType: PackageTypes;
+    packageType: PackageType;
     totalAvailable: number;
     available: boolean;
     imageUrl: string;
@@ -43,7 +43,7 @@ export class Package {
     goal: number;
 }
 
-export enum PackageTypes {
+export enum PackageType {
     Live = 'Live',
     Silent = 'Silent',
     SuperSilent = 'Super Silent',
@@ -59,7 +59,7 @@ export const TestPackages = [
         bidIncrement: 250,
         currentBid: 500,
         currentWinner: null,
-        packageType: PackageTypes.Live,
+        packageType: PackageType.Live,
         available: true,
         goal: 2000
     }),
@@ -70,7 +70,7 @@ export const TestPackages = [
         currentBid: 2000,
         bidIncrement: 500,
         currentWinner: null,
-        packageType: PackageTypes.Live,
+        packageType: PackageType.Live,
         available: true,
         goal: 10000
     }),
@@ -82,7 +82,7 @@ export const TestPackages = [
         bidIncrement: 2,
         currentWinner: null,
         available: true,
-        packageType: PackageTypes.Silent
+        packageType: PackageType.Silent
     }),
     new Package({
         id: 301,
@@ -93,7 +93,7 @@ export const TestPackages = [
         currentWinner: null,
         available: true,
         categoryID: 1002,
-        packageType: PackageTypes.Silent
+        packageType: PackageType.Silent
     }),
     new Package({
         id: 302,
@@ -104,7 +104,7 @@ export const TestPackages = [
         currentWinner: null,
         categoryID: 1001,
         available: true,
-        packageType: PackageTypes.Silent
+        packageType: PackageType.Silent
     }),
     new Package({
         id: 303,
@@ -114,7 +114,7 @@ export const TestPackages = [
         bidIncrement: 2,
         currentWinner: null,
         available: true,
-        packageType: PackageTypes.Silent
+        packageType: PackageType.Silent
     }),
     new Package({
         id: 304,
@@ -124,7 +124,7 @@ export const TestPackages = [
         bidIncrement: 2,
         currentWinner: null,
         available: true,
-        packageType: PackageTypes.Silent
+        packageType: PackageType.Silent
     }),
     new Package({
         id: 305,
@@ -135,7 +135,7 @@ export const TestPackages = [
         currentWinner: null,
         categoryID: 1001,
         available: true,
-        packageType: PackageTypes.Silent
+        packageType: PackageType.Silent
     }),
     new Package({
         id: 400,
@@ -146,7 +146,7 @@ export const TestPackages = [
         buyNowPrice: 200,
         available: true,
         currentWinner: null,
-        packageType: PackageTypes.SuperSilent
+        packageType: PackageType.SuperSilent
     }),
     new Package({
         id: 500,
@@ -156,7 +156,7 @@ export const TestPackages = [
         bidIncrement: 2500,
         currentWinner: null,
         available: false,
-        packageType: PackageTypes.Live,
+        packageType: PackageType.Live,
         goal: 20000
     }),
     new Package({
@@ -165,7 +165,7 @@ export const TestPackages = [
         buyNowPrice: 20,
         totalAvailable: 35,
         available: true,
-        packageType: PackageTypes.MultiSale
+        packageType: PackageType.MultiSale
     }),
     new Package({
         id: 700,
@@ -173,7 +173,7 @@ export const TestPackages = [
         buyNowPrice: 40,
         available: true,
         totalAvailable: 19,
-        packageType: PackageTypes.MultiSale
+        packageType: PackageType.MultiSale
     }),
     new Package({
         id: 800,
@@ -181,6 +181,6 @@ export const TestPackages = [
         buyNowPrice: 25,
         available: true,
         totalAvailable: 0,
-        packageType: PackageTypes.MultiSale
+        packageType: PackageType.MultiSale
     })
 ];

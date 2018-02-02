@@ -19,17 +19,17 @@
             #{{item.id}} {{item.name}}
             <span *ngIf="item.available === false" class="badge badge-danger ml-2">UNAVAILABLE</span>
             <span *ngIf="item.sold" class="badge badge-danger ml-2">SOLD</span>
-            <span *ngIf="item.totalAvailable < 1 && item.packageType === packageTypes.MultiSale" class="badge badge-danger ml-2">SOLD OUT</span>
+            <span *ngIf="item.totalAvailable < 1 && item.packageType === PackageType.MultiSale" class="badge badge-danger ml-2">SOLD OUT</span>
           </h5>
           <div>
             <p>{{item.description}}</p>
           </div>
-          <div *ngIf="item.packageType === packageTypes.MultiSale">
+          <div *ngIf="item.packageType === PackageType.MultiSale">
             <span class="font-weight-bold">Total Available:</span>
             <span class="float-right">{{item.totalAvailable
               <=1 ? '0' : item.totalAvailable}}</span>
           </div>
-          <div *ngIf="item.packageType !== packageTypes.MultiSale">
+          <div *ngIf="item.packageType !== PackageType.MultiSale">
             <div>
               <span class="font-weight-bold">Current Bid:</span>
               <span class="float-right mx-2" [@increaseState]="item.state">{{item.currentBid | currency:'CAD':'symbol-narrow'}}</span>
@@ -50,11 +50,11 @@
           <div class="mt-2" *ngIf="item.available && !item.sold">
             <button *ngIf="currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false" type="button" class="btn btn-primary"
               disabled>Winning</button>
-            <button *ngIf="item.packageType !== packageTypes.MultiSale && !(currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false)"
-              type="button" class="btn btn-primary" (click)="placeBid(item.id, item.currentBid + item.bidIncrement)" [disabled]="!item.available || item.sold || (item.packageType === packageTypes.MultiSale && item.totalAvailable < 1)">Place Bid for {{item.currentBid + item.bidIncrement | currency:'CAD':'symbol-narrow'}}</button>
-            <button *ngIf="item.buyNowPrice && item.packageType !== packageTypes.MultiSale" type="button" class="btn btn-success float-right"
-              (click)="buyNow(item.id)" [disabled]="!item.available || item.sold || (item.packageType === packageTypes.MultiSale && item.totalAvailable < 1)">Buy Now {{item.buyNowPrice | currency:'CAD':'symbol-narrow'}}</button>
-            <button *ngIf="item.buyNowPrice && item.packageType === packageTypes.MultiSale" type="button" class="btn btn-primary" [disabled]="item.totalAvailable < 1 || !item.available"
+            <button *ngIf="item.packageType !== PackageType.MultiSale && !(currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false)"
+              type="button" class="btn btn-primary" (click)="placeBid(item.id, item.currentBid + item.bidIncrement)" [disabled]="!item.available || item.sold || (item.packageType === PackageType.MultiSale && item.totalAvailable < 1)">Place Bid for {{item.currentBid + item.bidIncrement | currency:'CAD':'symbol-narrow'}}</button>
+            <button *ngIf="item.buyNowPrice && item.packageType !== PackageType.MultiSale" type="button" class="btn btn-success float-right"
+              (click)="buyNow(item.id)" [disabled]="!item.available || item.sold || (item.packageType === PackageType.MultiSale && item.totalAvailable < 1)">Buy Now {{item.buyNowPrice | currency:'CAD':'symbol-narrow'}}</button>
+            <button *ngIf="item.buyNowPrice && item.packageType === PackageType.MultiSale" type="button" class="btn btn-primary" [disabled]="item.totalAvailable < 1 || !item.available"
               (click)="purchaseItem(item.id)">{{ item.totalAvailable > 0 ? 'Buy Now ' + (item.buyNowPrice | currency:'CAD':'symbol-narrow') : 'SOLD OUT'}}</button>
             <div *ngIf="item.goal > 0" class="mt-2 text-center font-weight-bold">
               Goal

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PackageTypes } from '../../classes/package';
+import { PackageType } from '../../classes/package';
 
 @Component({
   selector: 'app-silent-auction',
@@ -8,7 +8,7 @@ import { PackageTypes } from '../../classes/package';
 })
 export class SilentAuctionComponent implements OnInit {
 
-  PackageTypes = PackageTypes;
+  PackageType = PackageType;
 
   constructor() { }
 
