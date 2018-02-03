@@ -1,13 +1,12 @@
 <div id="main-container" class="container-fluid">
-  <h1>
-    {{itemType}}
-  </h1>
 
-  <ul class="nav nav-pills justify-content-center">
-    <li class="nav-item" *ngFor="let category of categories; let cIndex = index">
-      <a class="nav-link" href="javascript:void(0)" [class.active]="categoryIndex === cIndex" (click)="categoryChange(cIndex)">{{category.name}}</a>
-    </li>
-  </ul>
+  <div>
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item" *ngFor="let category of categories; let cIndex = index">
+        <a class="nav-link" href="javascript:void(0)" [class.active]="categoryIndex === cIndex" (click)="categoryChange(cIndex)">{{category.name}}</a>
+      </li>
+    </ul>
+  </div>
 
   <div class="row">
     <div *ngFor="let item of items" class="col-lg-4 col-md-6 col-sm-12 my-2">
@@ -46,17 +45,22 @@
               <span class="float-right mx-2">{{item.currentWinner ? item.currentWinner.firstName + ' ' + item.currentWinner.lastName : 'No bids placed'}}</span>
             </div>
           </div>
-          <div class="mt-2" *ngIf="item.available && !item.sold">
-            <button *ngIf="currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false" type="button" class="btn btn-primary"
-              disabled>Winning</button>
-            <button *ngIf="item.packageType !== PackageType.MultiSale && !(currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false)"
-              type="button" class="btn btn-primary" (click)="placeBid(item.id, item.currentBid + item.bidIncrement)" [disabled]="!item.available || item.sold || (item.packageType === PackageType.MultiSale && item.totalAvailable < 1)">Place Bid for {{item.currentBid + item.bidIncrement | currency:'CAD':'symbol-narrow'}}</button>
-            <button *ngIf="item.buyNowPrice && item.packageType !== PackageType.MultiSale" type="button" class="btn btn-success float-right"
-              (click)="buyNow(item.id)" [disabled]="!item.available || item.sold || (item.packageType === PackageType.MultiSale && item.totalAvailable < 1)">Buy Now {{item.buyNowPrice | currency:'CAD':'symbol-narrow'}}</button>
-            <button *ngIf="item.buyNowPrice && item.packageType === PackageType.MultiSale" type="button" class="btn btn-primary" [disabled]="item.totalAvailable < 1 || !item.available"
-              (click)="purchaseItem(item.id)">{{ item.totalAvailable > 0 ? 'Buy Now ' + (item.buyNowPrice | currency:'CAD':'symbol-narrow') : 'SOLD OUT'}}</button>
-            <div *ngIf="item.goal > 0" class="mt-2 text-center font-weight-bold">
-              Goal
+          <div class="row" *ngIf="item.available && !item.sold">
+            <div *ngIf="currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false" class="col-lg-12 mt-2">
+              <button type="button" class="btn btn-primary w-100" disabled>Winning</button>
+            </div>
+            <div *ngIf="item.packageType !== PackageType.MultiSale && !(currentBidder ? item.currentWinner?.bidderNumber === currentBidder.BidderNumber : false)"
+              class="col-lg-12 mt-2">
+              <button type="button" class="btn btn-primary w-100" (click)="placeBid(item.id, item.currentBid + item.bidIncrement)" [disabled]="!item.available || item.sold || (item.packageType === PackageType.MultiSale && item.totalAvailable < 1)">Place Bid for {{item.currentBid + item.bidIncrement | currency:'CAD':'symbol-narrow'}}</button>
+            </div>
+            <div *ngIf="item.buyNowPrice && item.packageType === PackageType.MultiSale" class="col-lg-12 mt-2">
+              <button type="button" class="btn btn-primary w-100" [disabled]="item.totalAvailable < 1 || !item.available" (click)="purchaseItem(item.id)">{{ item.totalAvailable > 0 ? 'Buy Now ' + (item.buyNowPrice | currency:'CAD':'symbol-narrow') : 'SOLD OUT'}}</button>
+            </div>
+            <div *ngIf="item.buyNowPrice && item.packageType !== PackageType.MultiSale" class="col-lg-12 mt-2">
+              <button type="button" class="btn btn-success w-100" (click)="buyNow(item.id)" [disabled]="!item.available || item.sold || (item.packageType === PackageType.MultiSale && item.totalAvailable < 1)">Buy Now {{item.buyNowPrice | currency:'CAD':'symbol-narrow'}}</button>
+            </div>
+            <div *ngIf="item.goal > 0" class="mt-2 text-center w-100">
+              <span class="font-weight-bold">Goal</span>
               <p-progressBar [value]="getGoalPercentage(item)"></p-progressBar>
             </div>
           </div>
