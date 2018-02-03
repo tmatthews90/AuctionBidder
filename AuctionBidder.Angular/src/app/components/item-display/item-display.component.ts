@@ -31,6 +31,7 @@ export class ItemDisplayComponent implements OnInit {
   displayLogin = false;
   currentBidder: Bidder;
   connection: Boolean;
+  categoryIndex = 0;
   PackageType = PackageType;
   categories: Category[] = [];
   items: Package[] = [];
@@ -109,6 +110,7 @@ export class ItemDisplayComponent implements OnInit {
 
   categoryChange(index) {
     // if define category ID filter based off of ID. If category id < 0 then is all items category
+    this.categoryIndex = index;
     if (this.categories[index].id > 0) {
       this.items = TestPackages.filter(item => item.categoryID === this.categories[index].id && item.packageType === this.itemType);
     } else {

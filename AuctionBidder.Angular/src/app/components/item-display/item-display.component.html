@@ -2,9 +2,13 @@
   <h1>
     {{itemType}}
   </h1>
-  <p-tabView *ngIf="categories" (onChange)="categoryChange($event.index)" [activeIndex]="0">
-    <p-tabPanel *ngFor="let category of categories" header="{{category.name}}"></p-tabPanel>
-  </p-tabView>
+
+  <ul class="nav nav-tabs nav-fill justify-content-center">
+    <li class="nav-item" *ngFor="let category of categories; let cIndex = index">
+      <a class="nav-link" href="javascript:void(0)" [class.active]="categoryIndex === cIndex" (click)="categoryChange(cIndex)">{{category.name}}</a>
+    </li>
+  </ul>
+
   <div class="row">
     <div *ngFor="let item of items" class="col-lg-4 col-md-6 col-sm-12 my-2">
       <div class="card">

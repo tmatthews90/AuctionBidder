@@ -10,7 +10,6 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { DialogModule } from 'primeng/dialog';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { InputSwitchModule } from 'primeng/inputswitch';
-import { TabViewModule } from 'primeng/tabview';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -46,7 +45,6 @@ import { appRoutes } from './app.routes';
     ProgressBarModule,
     ReactiveFormsModule,
     TableModule,
-    TabViewModule,
     KeyFilterModule,
     InputSwitchModule,
     DialogModule,
