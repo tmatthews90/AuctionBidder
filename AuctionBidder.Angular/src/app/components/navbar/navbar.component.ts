@@ -38,13 +38,13 @@ export class NavbarComponent implements OnInit {
     this.bidderLookupFailed = false;
     const bidder = TestBidders.find(b => b.BidderNumber === Number(this.loginForm.get('BidderNumber').value)) ;
     if (bidder) {
-      this.loginForm.reset();
       this.userService.bidder = bidder;
       this.displayRegister = false;
       this.displayLogin = false;
     } else {
       this.bidderLookupFailed = true;
     }
+    this.loginForm.reset();
   }
 
   register() {

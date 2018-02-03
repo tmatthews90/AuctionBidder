@@ -21,8 +21,9 @@
     </ul>
     <div *ngIf="!bidder">
       <form class="form-inline my-2 my-lg-0" (submit)="login()" (keydown.enter)="login()" [formGroup]="loginForm">
-        <input class="form-control mr-sm-2" type="search" placeholder="Bidder Number" pKeyFilter="int" aria-label="Search" formControlName="BidderNumber" [class.is-invalid]="bidderLookupFailed">
-        <button class="btn btn-light my-2 my-sm-0 mr-sm-2" type="submit">Login</button>
+        <input class="form-control mr-sm-2" type="search" [placeholder]="bidderLookupFailed ? 'No bidder found' : 'Bidder Number'" pKeyFilter="int" aria-label="Search" formControlName="BidderNumber"
+          [class.is-invalid]="bidderLookupFailed">
+        <button class="btn btn-light my-2 my-sm-0 mr-sm-2" type="submit">Login<i class="fas fa-sign-in-alt ml-2"></i></button>
         <button type="button" class="btn btn-light my-2 my-sm-0" (click)="displayRegister = !displayRegister">Register</button>
       </form>
     </div>
@@ -32,9 +33,14 @@
         {{bidder ? bidder.FirstName + ' ' + bidder.LastName + ' (' + bidder.BidderNumber + ')' : 'Login'}}
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">My Bids
+        <a class="dropdown-item" href="javascript:void(0)">My Bids
           <span class="float-right">
             <i class="fas fa-trophy"></i>
+          </span>
+        </a>
+        <a class="dropdown-item" href="javascript:void(0)">Settings
+          <span class="float-right">
+            <i class="fas fa-cog"></i>
           </span>
         </a>
         <a class="dropdown-item" (click)="logout()">Logout
