@@ -34,9 +34,9 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  login(bidderNumber: number) {
+  login() {
     this.bidderLookupFailed = false;
-    const bidder = TestBidders.find(b => b.BidderNumber === Number(this.loginForm.get('BidderNumber').value || bidderNumber)) ;
+    const bidder = TestBidders.find(b => b.BidderNumber === Number(this.loginForm.get('BidderNumber').value)) ;
     if (bidder) {
       this.loginForm.reset();
       this.userService.bidder = bidder;
