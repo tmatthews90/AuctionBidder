@@ -8,9 +8,9 @@ import { MultiSellsComponent } from './components/multi-sells/multi-sells.compon
 import { LivePreviewComponent } from './components/live-preview/live-preview.component';
 
 export const appRoutes: Routes = [
-    { path: '', redirectTo: '', pathMatch: 'full' },
+    { path: '', redirectTo: 'silent', pathMatch: 'full' },
     { path: 'live', component: LiveAuctionComponent },
-    { path: 'live/:id', component: LivePreviewComponent },
+    { path: 'featured/:id', component: LivePreviewComponent },
     { path: 'silent', component: SilentAuctionComponent },
     { path: 'multisell', component: MultiSellsComponent },
     { path: 'packages', component: PackagesComponent },
