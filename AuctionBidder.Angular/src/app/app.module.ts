@@ -27,6 +27,7 @@ import { UserService } from './services/user.service';
 import { BidderGuard } from './guards/bidder.guard';
 
 import { appRoutes } from './app.routes';
+import { LivePreviewComponent } from './components/live-preview/live-preview.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { appRoutes } from './app.routes';
     PackagesComponent,
     ItemDisplayComponent,
     SilentAuctionComponent,
-    MultiSellsComponent
+    MultiSellsComponent,
+    LivePreviewComponent
   ],
   imports: [
     BrowserModule,

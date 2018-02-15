@@ -42,7 +42,8 @@
             </div>
             <div>
               <span class="font-weight-bold">Current Winner:</span>
-              <span class="float-right mx-2">{{item.currentWinner ? item.currentWinner.firstName + ' ' + item.currentWinner.lastName : 'No bids placed'}}</span>
+              <span *ngIf="!item.currentWinner" class="float-right mx-2">No bids placed</span>
+              <span *ngIf="item.currentWinner" class="float-right mx-2">{{item.currentWinner.displayName ? item.currentWinner.firstName + ' ' + item.currentWinner.lastName : item.currentWinner.bidderNumber}}</span>
             </div>
           </div>
           <div class="row" *ngIf="item.available && !item.sold">
@@ -61,7 +62,7 @@
             </div>
             <div *ngIf="item.goal > 0" class="mt-2 text-center w-100">
               <span class="font-weight-bold">Goal</span>
-              <p-progressBar [value]="getGoalPercentage(item)"></p-progressBar>
+              <p-progressBar [value]="item.currentBid / item.goal * 100"></p-progressBar>
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ namespace LiveAuctionBidder.Models
         public string LastName;
         public string PhoneNumber;
         public string Email;
+        public bool DisplayName;
         public Address Address;
     }
 }

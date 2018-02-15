@@ -104,10 +104,6 @@ export class ItemDisplayComponent implements OnInit {
     }
   }
 
-  getGoalPercentage(item) {
-    return item.currentBid / item.goal * 100;
-  }
-
   categoryChange(index) {
     // if define category ID filter based off of ID. If category id < 0 then is all items category
     this.categoryIndex = index;

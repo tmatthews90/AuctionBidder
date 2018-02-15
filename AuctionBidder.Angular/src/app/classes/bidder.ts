@@ -6,6 +6,7 @@ export class Bidder {
         this.PhoneNumber    = newBidder.PhoneNumber;
         this.Email          = newBidder.Email;
         this.Address        = newBidder.Address;
+        this.displayName    = newBidder.displayName || false;
     }
 
     BidderNumber: number;
@@ -14,6 +15,7 @@ export class Bidder {
     PhoneNumber: string;
     Email: string;
     Address: Address;
+    displayName: boolean;
 }
 
 export class Address {
@@ -29,15 +31,18 @@ export const TestBidders = [
         FirstName: 'Travis',
         LastName: 'Matthews',
         BidderNumber: 100,
+        displayName: true
     }),
     new Bidder({
         FirstName: 'Michael',
         LastName: 'Cantrell',
         BidderNumber: 101,
+        displayName: false
     }),
     new Bidder({
         FirstName: 'David',
         LastName: 'Knight',
         BidderNumber: 102,
+        displayName: true
     })
 ];

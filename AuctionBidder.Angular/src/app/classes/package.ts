@@ -22,7 +22,7 @@ export class Package {
         this.state =            'inactive';
     }
 
-    id: string;
+    id: number;
     name: string;
     description: string;
     bidIncrement: number;
