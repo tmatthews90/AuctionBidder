@@ -57,5 +57,6 @@ export class LivePreviewComponent implements OnInit, OnDestroy {
         this.updateItem(currentBid, bidder);
       }
     });
+  }
 }
 
